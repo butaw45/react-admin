@@ -1,12 +1,16 @@
 import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import logo from './logo.svg';
 import './App.css';
 import Menu from './components/Menu';
 import Nav from './components/Nav';
+import Dashboard from './pages/Dashboard';
+import Users from './pages/Users';
 
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
       <Nav />
 
 <div className="container-fluid">
@@ -14,33 +18,17 @@ function App() {
     <Menu />
 
     <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-     
-
-      <div className="table-responsive">
-        <table className="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    
+        <Routes>
+          <Route path={"/"} element={<Dashboard />} />
+          <Route path={"/users"} element={<Users />} />
+          
+        </Routes>
+      
     </main>
   </div>
 </div>
+      </BrowserRouter>
     </div>
   );
 }
