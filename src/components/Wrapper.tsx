@@ -1,9 +1,31 @@
-import React, { Component } from 'react'
-import Menu from './Menu'
-import Nav from './Nav'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Navigate } from 'react-router-dom';
 
-export default class Wrapper extends Component {
-  render() {
+import Menu from './Menu';
+import Nav from './Nav';
+
+const Wrapper = (props:any) =>{
+  const [navigate, setNavigate] = useState(false);
+
+
+  useEffect(() => {
+    (
+        async () => {
+          try{
+            const {data} = await axios.get('user');
+          }catch (e){
+              setNavigate(true);
+          }
+
+        }
+    )();
+}, []);
+
+if(navigate){
+  return <Navigate to={'/login'} />;
+}
+  
     return (
 <>
         <Nav />
@@ -13,11 +35,13 @@ export default class Wrapper extends Component {
         <Menu />
 
         <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-          {this.props.children}
+          {props.children}
         </main>
       </div>
     </div>
 </>
     )
-  }
 }
+
+export default Wrapper;
+
