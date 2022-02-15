@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import { User } from '../models/user';
 
 const Nav = () => {
@@ -16,6 +17,7 @@ const Nav = () => {
                         data.first_name,
                         data.last_name,
                         data.email,
+                        data.role
                     ));
                 }
             )();
