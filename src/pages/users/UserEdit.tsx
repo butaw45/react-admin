@@ -44,7 +44,7 @@ const UserEdit = (props: any) => {
   };
 
   if (navigate) {
-    return <Navigate to="users" />;
+    return <Navigate to="/users" />;
   }
 
   return (
