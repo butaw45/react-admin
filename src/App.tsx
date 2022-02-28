@@ -8,6 +8,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import UserCreate from './pages/users/UserCreate';
 import Users from './pages/users/Users';
+import UserEdit from './pages/users/UserEdit';
 
 // import logo from './logo.svg';
 // import Menu from './components/Menu';
@@ -20,6 +21,7 @@ function App() {
           <Route path={"/"} element={<Dashboard />} />
           <Route path={"/users"} element={<Users />} />
           <Route path={"/users/create"} element={<UserCreate />} />
+          <Route path={"/users/:id/edit"} element={<UserEdit />} />
           <Route path={"/register"} element={<Register />} />
           <Route path={"/login"} element={<Login />} />
       </Routes>
