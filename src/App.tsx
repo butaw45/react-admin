@@ -16,6 +16,7 @@ import Products from './pages/products/Products';
 import ProductCreate from './pages/products/ProductCreate';
 import ProductEdit from './pages/products/ProductEdit';
 import Orders from './pages/orders/Orders';
+import Profile from './pages/Profile';
 
 // import logo from './logo.svg';
 // import Menu from './components/Menu';
@@ -26,6 +27,7 @@ function App() {
       <BrowserRouter>
       <Routes>
           <Route path={"/"} element={<Dashboard />} />
+          <Route path={"/profile"} element={<Profile />} />
           <Route path={"/users"} element={<Users />} />
           <Route path={"/users/create"} element={<UserCreate />} />
           <Route path={"/users/:id/edit"} element={<UserEdit />} />
