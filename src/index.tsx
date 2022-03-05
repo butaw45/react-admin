@@ -5,18 +5,29 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:8000/api/';
+axios.defaults.baseURL = 'http://localhost:8000/api/'
 axios.defaults.withCredentials = true;
+//create enable axios CROS
+axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
 //set Cors
-// axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
-// axios.defaults.headers.common['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE,PATCH,OPTIONS';
-// axios.defaults.headers.common['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, Content-Length, X-Requested-With, XMLHttpRequest';
+axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+axios.defaults.headers.common['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE,PATCH,OPTIONS';
+axios.defaults.headers.common['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, Content-Length, X-Requested-With, XMLHttpRequest';
 
 // axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 // axios.defaults.proxy = {
 //   host: 'http://localhost',
 //   port: 4200
 // };
+  // app.setGlobalPrefix('api');
+  // app.useGlobalPipes(new ValidationPipe());
+  // app.use(cookieParser());
+  // app.enableCors({
+  //   origin: 'http://localhost:4200',
+  //   credentials:true
+  // })
+
 
 ReactDOM.render(
   <React.StrictMode>
